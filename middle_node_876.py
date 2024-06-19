@@ -1,10 +1,19 @@
-def middleNode(head):
-    return head[len(head) // 2:]
+# Определение класса для односвязного списка.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 
-if __name__ == '__main__':
-    print(middleNode([1, 2, 3, 4, 5]))
-    print(middleNode([1, 2, 3, 4, 5, 6, 3, 6, 9, 5, 4, 1, 9]))
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        slow = head
+        fast = head
 
-    assert middleNode([1, 2, 3, 4, 5]) == [3, 4, 5]
-    assert middleNode([1, 2, 3, 4, 5, 6]) == [4, 5, 6]
+        # Перемещаем быстрый указатель на два шага, а медленный на один шаг каждый раз.
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        # Когда быстрый указатель достигнет конца, медленный будет в середине.
+        return slow
