@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def can_construct(ransom_note: str, magazine: str) -> bool:
     ransom_count = Counter(ransom_note)
     magazine_count = Counter(magazine)
@@ -9,8 +10,6 @@ def can_construct(ransom_note: str, magazine: str) -> bool:
         if magazine_count[char] < count:
             return False
     return True
-
-
 
 
 if __name__ == '__main__':
