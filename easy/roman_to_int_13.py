@@ -15,11 +15,10 @@ def roman_to_int(s: str) -> int:
     return total
 
 
-
 if __name__ == '__main__':
     print(roman_to_int("MCMXCIV"))
     print(roman_to_int("LVIII"))
 
-    # assert roman_to_int("III") == 3
-    # assert roman_to_int("LVIII") == 58
-    # assert roman_to_int("MCMXCIV") == 1994
+    assert roman_to_int("III") == 3
+    assert roman_to_int("LVIII") == 58
+    assert roman_to_int("MCMXCIV") == 1994
